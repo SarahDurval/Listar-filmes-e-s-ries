@@ -7,10 +7,10 @@ app.use(express.json())
 let filmes = [
     {
         id: 1,
-        title: "Oppenheimer",
-        description: "Filme sobre a criação da bomba atômica",
-        genre: "Drama",
-        releaseYear: 2023,
+        title: "Como Eu Era Antes de Você",
+        description: "narra a história de Louisa Clark, uma jovem peculiar contratada para cuidar de Will Traynor...",
+        genre: "Romance/Drama",
+        releaseYear: 2016,
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcBffyvpqZeBv5YhyEgxspNcLqXHH8grBwbQ&s"
     }
 ]
@@ -49,28 +49,23 @@ app.get("/filmes/:id", (req, res) => {
 
 // Criar filme
 app.post("/filmes", (req, res) => {
-    const { title, description, genre, releaseYear, image } = req.body
-
-
-    if (!title || !description || !genre || !releaseYear || !image) {
-        return res.status(400).json({ error: "Todos os campos são obrigatórios❗" })
+    const { title, genre, description, image, releaseYear } = req.body
+ 
+    if (!title || !genre || !description || !image || !releaseYear) {
+        return res.status(400).json({ mensagem: "Título inválido" })
     }
-    if (title.length < 2) {
-        return res.status(400).json({ error: "O título deve ter mais de 1 caractere➕" })
+ 
+    const novafilmes = {
+        id: series.length + 1,
+        title: title,
+        genre: genre,
+        description: description,
+        releaseYear: releaseYear,
+        image: image
     }
-
-    const novoFilme = {
-        // id: filmes.length + 1 o nome do filme precisa ter mais de um caractere
-        id: filmes.length + 1,
-        title,
-        description,
-        genre,
-        releaseYear,
-        image
-    }
-
-    filmes.push(novoFilme)
-    return res.status(201).json(novoFilme)
+ 
+    series.push(novafilmes)
+    return res.status(201).json(novaSerie)
 })
 
 
@@ -96,24 +91,21 @@ app.get("/series/:id", (req, res) => {
 
 // Criar serie
 app.post("/series", (req, res) => {
-    const { title, description, genre, releaseYear, image } = req.body
-
-    if (!title || !description || !genre || !releaseYear || !image) {
-        return res.status(400).json({ error: "Todos os campos são obrigatórios❗" })
+    const { title, genre, description, image, releaseYear } = req.body
+ 
+    if (!title || !genre || !description || !image || !releaseYear) {
+        return res.status(400).json({ mensagem: "Título inválido" })
     }
-    if (title.length < 2) {
-        return res.status(400).json({ error: "O título deve ter mais de 1 caractere➕" })
-    }
-
+ 
     const novaSerie = {
         id: series.length + 1,
-        title,
-        description,
-        genre,
-        releaseYear,
-        image
+        title: title,
+        genre: genre,
+        description: description,
+        releaseYear: releaseYear,
+        image: image
     }
-
+ 
     series.push(novaSerie)
     return res.status(201).json(novaSerie)
 })
