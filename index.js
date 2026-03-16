@@ -11,7 +11,7 @@ let filmes = [
         description: "narra a história de Louisa Clark, uma jovem peculiar contratada para cuidar de Will Traynor...",
         genre: "Romance/Drama",
         releaseYear: 2016,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcBffyvpqZeBv5YhyEgxspNcLqXHH8grBwbQ&s"
+        image: "https://m.media-amazon.com/images/M/MV5BMjQ4ZGMyZjYtNDYwNC00MmUyLWE4ZWQtM2ViMTQ0OTc1M2U1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
     }
 ]
 
@@ -22,7 +22,7 @@ let series = [
         description: "Advogados em Nova York enfrentando casos complexos",
         genre: "Drama",
         releaseYear: 2011,
-        image: "https://br.web.img2.acsta.net/pictures/14/03/28/10/18/433386.jpg"
+        image: "https://m.media-amazon.com/images/M/MV5BYmE4MmNjZjUtNTEyNy00NTZiLWE4NTktYjM2NjBhYzQ1N2IzXkEyXkFqcGc@._V1_.jpg"
     }
 ]
 
