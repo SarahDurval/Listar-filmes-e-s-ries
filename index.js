@@ -55,8 +55,8 @@ app.post("/filmes", (req, res) => {
         return res.status(400).json({ mensagem: "Título inválido" })
     }
  
-    const novafilmes = {
-        id: series.length + 1,
+    const novafilme = {
+        id: filmes.length + 1,
         title: title,
         genre: genre,
         description: description,
@@ -64,8 +64,8 @@ app.post("/filmes", (req, res) => {
         image: image
     }
  
-    series.push(novafilmes)
-    return res.status(201).json(novaSerie)
+   filmes.push(novafilme)
+    return res.status(201).json(novafilme)
 })
 
 
